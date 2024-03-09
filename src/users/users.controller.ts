@@ -25,10 +25,12 @@ export class UsersController {
   console.log('Query result:', result);
   return result; 
 }
+  
   @Get(":id")
-  async findOne(@Param("id") id: string): Promise<User> {
+  async findOne(@Param("id") id: string): Promise<User | undefined> {
     return this.usersService.findOne(id);
   }
+
   
 
 }
